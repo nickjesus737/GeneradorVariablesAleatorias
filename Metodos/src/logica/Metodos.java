@@ -119,5 +119,34 @@ public class Metodos {
         }
 
     }
+    
+    public void exportarEntero(ArrayList<Integer> numerosAleatorios) {
+        String outputFile = "C:/Users/trabajo/Desktop/NumerosAleatorios.csv";
+        boolean alreadyExists = new File(outputFile).exists();
+
+        if (alreadyExists) {
+            File ArchivoEmpleados = new File(outputFile);
+            ArchivoEmpleados.delete();
+        }
+
+        try {
+
+            CsvWriter csvOutput = new CsvWriter(new FileWriter(outputFile, true), ',');
+
+            csvOutput.write("Numeros Aleatorios");
+            csvOutput.endRecord();
+
+            for (int i = 0; i < numerosAleatorios.size(); i++) {
+                csvOutput.write(Integer.toString(numerosAleatorios.get(i)));
+                csvOutput.endRecord();
+            }
+
+            csvOutput.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
 
 }

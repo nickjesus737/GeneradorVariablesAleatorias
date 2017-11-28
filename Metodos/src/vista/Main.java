@@ -14,7 +14,7 @@ public class Main {
         
         Metodos me = new Metodos();
         
-        MetodosEspeciales me1 = new MetodosEspeciales();
+        MetodosTransformadaInversa  me1 = new MetodosTransformadaInversa();
         
         ArrayList numerosAleatorios1 = me.numerosAleatorios(1, 127, 11, 100003);
      /* ArrayList numerosAleatorios2 = me.numerosAleatorios(2, 127, 11, 100003);
@@ -27,9 +27,9 @@ public class Main {
         ArrayList numerosAleatorios9 = me.numerosAleatorios(9, 127, 11, 100003);
         
      */   
-        ArrayList variableAleatoriaUniforme = me1.variables_normales(numerosAleatorios1, 18.7, 5);
+        ArrayList variableAleatoriaUniforme = me1.variableAleatoriaPoisson(numerosAleatorios1, 2);
         
-        me1.exportar(numerosAleatorios1);
+        me1.exportarEntero(variableAleatoriaUniforme);
     }
     
 }
